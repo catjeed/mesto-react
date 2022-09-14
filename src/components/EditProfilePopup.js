@@ -41,7 +41,7 @@ const EditProfilePopup = ({ onUpdateUser, ...props}) => {
                 className="popup__input popup__input_type_name"
                 minLength="2"
                 maxLength="40"
-                value={name}
+                value={ name || ''}
                 onChange={handleNameChange}
                 required
             />
@@ -54,7 +54,7 @@ const EditProfilePopup = ({ onUpdateUser, ...props}) => {
                 className="popup__input popup__input_type_description"
                 minLength="2"
                 maxLength="200"
-                value={description}
+                value={description || ''}
                 onChange={handleDescriptionChange}
                 required
             />
