@@ -1,10 +1,14 @@
 import React from "react";
 import '../index.css';
 
-function ImagePopup({card, onClose}) {
+const ImagePopup = ({card, onClose}) => {
+
+    const handlePopupOverlayClose = (evt) => {
+        if (evt.target.classList.contains('popup')) onClose();
+    }
 
     return (
-        <div className={`popup popup_type_image ${card.link && 'popup_opened'}`}>
+        <div className={`popup popup_type_image ${card.link && 'popup_opened'}`} onClick={handlePopupOverlayClose}>
             <div className="popup__container popup__container_type_image">
                 <figure className="popup__card">
                     <img src={card.link} alt={card.name} className="popup__image" />
