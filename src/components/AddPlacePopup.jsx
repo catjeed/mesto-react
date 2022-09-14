@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PopupWithForm from "./PopupWithForm";
 
 const AddPlacePopup = ({ onAddPlace, ...props}) => {
@@ -11,6 +11,11 @@ const AddPlacePopup = ({ onAddPlace, ...props}) => {
             link
         })
     }
+
+    useEffect(() => {
+        setName('');
+        setLink('');
+    }, [props.isOpen]);
 
     const handleTitleChange = (evt) => {
         setName(evt.target.value)
